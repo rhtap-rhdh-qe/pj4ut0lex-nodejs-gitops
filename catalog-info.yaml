@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pj4ut0lex-nodejs-gitops
+  description: This is GitOps manifest for pj4ut0lex-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=pj4ut0lex-nodejs
+    backstage.io/kubernetes-id: pj4ut0lex-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pj4ut0lex-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pj4ut0lex-nodejs
